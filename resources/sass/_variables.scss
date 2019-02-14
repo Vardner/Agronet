@@ -1,20 +1,188 @@
+/*-- fonts --*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-// Body
-$body-bg: #f8fafc;
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
-// Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+/*-- colors --*/
+$main-color-1: #FFF;
+$main-color-2: #000;
+$main-color-3: rgba(0, 0, 0, 0.1);
+$main-color-4: rgba(0, 0, 0, 0.2);
+$main-color-5: #F6B639;
+$main-color-6: #03996C;
+$main-color-7: #C4C4C4;
+$main-color-8: #E9E9E9;
+$main-color-9: #999999;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$main-color-10: #E5E5E5;
+$main-color-11: #232323;
+$main-color-12: #326BB5;
+$main-color-13: #FF9C28;
+$main-color-14: #CDCDCD;
+
+/***********************/
+
+$border: 1px solid $main-color-7;
+$shadow: 0px 1px 10px $main-color-3;
+
+$main-text-color: $main-color-2; //black
+$secondary-text-color: $main-color-9; //gray = #999999
+$main-light-text-color: $main-color-1; //white
+$main-dark-text-color: $main-color-11; // #232323
+$link-text-color: $main-color-12;
+
+$bread-crumbs__text_color: $secondary-text-color;
+
+$main-text-color-hover: $main-color-1;
+
+$btn_text-color: $main-color-1;
+$btn_hover_shadow:  $shadow;
+$btn_back-color1: $main-color-5; //orange1 = #F6B639
+$btn_back-color2: $main-color-6; //green
+$btn_back-color3: $main-color-13; //orange2 = #FF9C28
+$btn_back_color4_noactive: $main-color-7; //gray
+
+$drop-down-menu-ul1_background: $main-color-1;
+$drop-down-menu-ul1_shadow: $shadow;
+$drop-down-menu-ul2_background: $drop-down-menu-ul1_background;
+$drop-down-menu-ul3_background: $drop-down-menu-ul1_background;
+$drop-down-menu-ul2_shadow: $drop-down-menu-ul1_shadow;
+$drop-down-menu-ul3_shadow: $drop-down-menu-ul1_shadow;
+$drop-down-menu-link_border-hover: 1px solid $main-color-4;
+
+
+$scrollbar_background: $main-color-1;
+$scrollbar_shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+$scrollbar-thumb_background: $main-color-8;
+
+/***********************/
+
+/*--- Header ---*/
+$header-block_background: $main-color-1;
+$notifications__number_background: $main-color-6;
+$basket__number_background: $main-color-6;
+$header__wrapper-catalog_background: $main-color-6;
+$sub-submenu-catalog__wrapper-img_background: $main-color-1;
+$header__wrapper-search-input_background: $main-color-1;
+
+$menu-region_text-color: $main-color-9;
+
+/*--- Footer ---*/
+$footer-block_background: $main-color-6;
+$btn-go-up_background: $main-color-14;
+
+/*--- Content-block ---*/
+$content-block_background: $main-color-10;
+
+/*--- Dashboard ---*/
+$slick-dots_background: $main-color-1;
+$slick-dots_shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+$slick-dots-active_background: $main-color-6;
+
+$products__header-text_color: $main-dark-text-color;
+$products__header-link-show-all_color: $link-text-color;
+
+$one-product_background: $main-color-1;
+$one-product_shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+$one-product__top-product_border: 2px solid $main-color-5; //orange = #F6B639;
+$one-product__top-product-text_background: $main-color-5;
+$one-product__top-product-text_color: $main-color-1;
+$one-product__name-product__text_color: $main-color-11;
+$one-product__location__text_color: $main-color-11;
+$one-product__about-product__text_color: $main-color-9;
+$one-product__price-block__price-text_color: $main-color-6; //green
+$one-product__price-block__text_color: $main-color-11;
+$one-product__number-of-sentences__text_color: $main-color-9;
+$one-product__rating__text_color: $main-color-9;
+$one-product__btn-add-favorites_text_color: $main-color-9;
+$one-product__btn-add-favorites_active_color: $main-color-5;
+
+$shops__header-text: $products__header-text_color;
+$shops__header-link-show-all_color: $products__header-link-show-all_color;
+
+$one-shop_background: $main-color-1;
+$one-shop__name-shop__text_color: $main-color-2;
+$one-shop__number-of-products__text_color: $main-color-9;
+
+$seo-text__h1_color: $main-color-11;
+$seo-text__h2_color: $main-color-9;
+$seo-text__h3_color: $main-color-9;
+$seo-block__btn-read-more_text_color: $link-text-color;
+
+/*--- Template BC-product ---*/
+$content-block__wrapper-for-template-product-card_background: $main-color-1;
+$tab-specification__table-specifications_border_color: $main-color-8;
+
+$content-block__tab-name_active__background: $main-color-1;
+$content-block__tab-content_active_background: $content-block__tab-name_active__background;
+$content-block__tab-content_active_shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+
+$tab-specification__seo-text-specification_color: $main-dark-text-color;
+$tab-prices__table-shops_row_border: 1px solid $main-color-8;
+$tab-prices__table-shops_row_background: $main-color-1;
+
+$table-shops__freeship_text-color: $main-color-13;
+$table-shops__price-text_color: $main-color-6;
+$table-shops__row_top-shop_border-color: 2px solid $main-color-5;
+$table-shops__row_top-shop_text_background: $main-color-5;
+
+/*--- popup ---*/
+$popup_background: $main-color-1;
+$popup_shadow: 0px 0px 25px rgba(49, 49, 49, 0.1);
+
+/*--- BC-product ---*/
+$column-value-field__value-field-text_active_bodred-color: $main-color-6;
+
+/*--- Filter-page ---*/
+$content-block__filters_background: $main-color-1;
+$items-menu__name-item-menu_checked_background: $main-color-6;
+$menu-price__btn-pice-interval_background: $main-color-6;
+$results-products__header-results-products_background: $main-color-1;
+$sort-results__btn-sort_border:  1px solid $main-color-8;
+
+$menu-region__location-svg_color: $main-color-7;
+$view-display-results__btn-type_svg_back: $main-color-7;
+$view-display-results__btn-type_svg-active_back: $main-color-6;
+
+/*--- Mixins fonts ---*/
+
+@mixin text_Roboto($size, $color) {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+
+  font-size: $size;
+  color: $color;
+}
+
+@mixin text_OpenSans($size, $color) {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+
+  font-size: $size;
+  color: $color;
+}
+
+/*-- Extend --*/
+
+%row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+%column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%link {
+  text-decoration: none;
+  cursor: pointer;
+}
