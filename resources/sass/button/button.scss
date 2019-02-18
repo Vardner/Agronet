@@ -1,0 +1,20 @@
+.button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: #F6B639;
+  border-radius: 2px;
+  padding: 10px 30px;
+  text-align: center;
+  color: #fff;
+  max-width: 200px;
+  width: 100%;
+
+  &--search {
+    background: #03996C;
+    max-width: 145px;
+  }
+}

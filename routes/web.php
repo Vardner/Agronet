@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('', function () {
+    return view('pages/main');
+});
+
+Route::get('/category', function () {
+    return view('pages/main-category');
+});
+
+Route::get('/product', function () {
+    return view('pages/product');
 });

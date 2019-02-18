@@ -1,0 +1,24 @@
+.header {
+  font-family: Roboto;
+  background: $header-block_background;
+
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__first-line {
+    padding: 10px 0;
+  }
+
+  &__items-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__phones {
+
+  }
+}
