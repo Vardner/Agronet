@@ -1,3 +1,4 @@
+@extends('layout-wrapper')
 @section('content')
     <section class="content-block">
         <div class="content-block__wrapper-content">

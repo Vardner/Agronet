@@ -2,14 +2,7 @@ $(function () {
 
     /*******************************  Main page ***************************************************/
     /*--- Slider on main page ---*/
-    $('.main-slider__slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        dots: true,
-        autoplay: true
-    });
+
 
     /*--- Open seo-text on main page ---*/
     $('.seo-block__btn-read-more').click(function() {

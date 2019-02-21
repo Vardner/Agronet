@@ -1,20 +1,53 @@
 .button {
   font-family: Roboto;
-  font-style: normal;
   font-weight: bold;
-  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   text-transform: uppercase;
-  background: #F6B639;
+  background: $button-default-bg;
   border-radius: 2px;
   padding: 10px 30px;
   text-align: center;
   color: #fff;
-  max-width: 200px;
   width: 100%;
+  transition: all .3s ease-in;
+
+  &:hover {
+    background-color: lighten($button-default-bg, 8);
+  }
 
   &--search {
-    background: #03996C;
-    max-width: 145px;
+    background: $button-green-bg;
+    border-radius: 0;
+
+    &:hover {
+      background-color: lighten($button-green-bg, 8);
+    }
+  }
+
+  &--category {
+    height: 100%;
+    background: $button-green-bg;
+    position: relative;
+    border-radius: 0;
+
+    &:hover {
+      background-color: lighten($button-green-bg, 8);
+    }
+  }
+
+  &--more {
+    background-color: $button-orange;
+
+    &:hover {
+      background-color: lighten($button-orange, 8);
+    }
+  }
+
+  &__icon {
+    margin: 0 15px;
+    display: block;
   }
 }

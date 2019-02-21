@@ -1,0 +1,31 @@
+.category-menu {
+  padding-top: 10px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  z-index: $main-category-menu-index;
+  font-size: 14px;
+  font-family: Roboto;
+  color: #000000;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.12);
+  display: none;
+
+  &__item {
+
+    &:hover {
+      background: darken(#fff, 10);
+    }
+
+    &-icon {
+      vertical-align: text-bottom;
+      margin-right: 10px;
+    }
+
+    &-link {
+      padding: 5px 10px 10px;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.main__section {
+  padding-top: 15px;
+
+  &-header {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: 18px;
+    color: #232323;
+  }
+
+  &-link {
+    color: $link-default-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &-arrow {
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
+}
