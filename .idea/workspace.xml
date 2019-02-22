@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ff02da-68be-48b2-bf37-108ebeaf8c9e" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/slick.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/fonts/OpenSans-Regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/fonts/Roboto-Regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog-images/Card1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog-images/Card2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog-images/Card3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog-images/Card4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/js/frontend/dropdowns/custom-select.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/js/frontend/dropdowns/dropdowns.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/js/frontend/show-seo/show-seo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/js/frontend/sliders/sliders.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/base/_zindex.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/breadcrumbs/breadcrumbs.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/catalog-list/catalog-list.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/category-menu/category-menu.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/footer/footer.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/header/__search.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/main/__section.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/main/__seo.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/main/__slider.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/sass/main/main.scss" />
-      <change beforePath="$PROJECT_DIR$/.idea/agronet.iml" afterPath="$PROJECT_DIR$/.idea/agronet.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/resources/js/frontend/abc/abc.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resources/js/frontend/shit.js" afterPath="$PROJECT_DIR$/resources/js/frontend/shit.js" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/base/_myGrid.scss" afterPath="$PROJECT_DIR$/resources/sass/base/_myGrid.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/base/_reset.scss" afterPath="$PROJECT_DIR$/resources/sass/base/_reset.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/base/_utilities.scss" afterPath="$PROJECT_DIR$/resources/sass/base/_utilities.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/base/_variables.scss" afterPath="$PROJECT_DIR$/resources/sass/base/_variables.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/bundle.scss" afterPath="$PROJECT_DIR$/resources/sass/bundle.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/button/button.scss" afterPath="$PROJECT_DIR$/resources/sass/button/button.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/header/header.scss" afterPath="$PROJECT_DIR$/resources/sass/header/header.scss" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout-wrapper.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout-wrapper.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/main-category.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/main-category.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/main.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/main-footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/main-footer.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/main-header.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/main-header.blade.php" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -603,12 +559,12 @@
       <workItem from="1550591583864" duration="2183000" />
       <workItem from="1550654708614" duration="19528000" />
       <workItem from="1550691936989" duration="609000" />
-      <workItem from="1550738330002" duration="1168000" />
+      <workItem from="1550738330002" duration="2053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75183000" />
+    <option name="totallyTimeSpent" value="76068000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,16 +576,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5021322" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29967427" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29967427" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.18294574" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.058631923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.8170543" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.18585859" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46254072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.8141414" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
