@@ -1,16 +1,21 @@
 //@import "compass/css3";
 @import "base/_variables";
+@import "base/zindex";
 @import "base/_reset";
 @import "base/_mixins";
 @import "base/_utilities";
 @import "base/_fonts";
 @import "base/_myGrid";
+@import "main/main";
+@import "catalog-list/catalog-list";
 @import "_dashboard";
 @import "product-page/product-card";
 @import "category-page/filter-page";
 @import "additionals/paginator";
 @import "header/header";
+@import "footer/footer";
 @import "button/button";
+@import "category-menu/category-menu";
 
 
 /**************************************************/

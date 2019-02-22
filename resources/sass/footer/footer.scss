@@ -1,0 +1,52 @@
+.footer {
+  background: $main-footer-bg;
+  padding: 40px 0 80px;
+  font-size: 14px;
+  font-family: Roboto;
+  color: #FFFFFF;
+
+  &__card{
+
+  }
+
+  &__list {
+
+    &-item {
+      padding-bottom: 15px;
+    }
+
+    &-link {
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    &-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    &-text {
+      color: #fff;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-flow: row wrap;
+
+    &-item {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__rights {
+    display: block;
+    text-align: center;
+  }
+}
