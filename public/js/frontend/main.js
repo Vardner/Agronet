@@ -86,12 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< HEAD
-/***/ "./resources/js/frontend/abc/abc.js":
-/*!******************************************!*\
-  !*** ./resources/js/frontend/abc/abc.js ***!
-  \******************************************/
-=======
 /***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/resolve-url-loader/index.js?!./node_modules/sass-loader/lib/loader.js?!./resources/sass/bundle.scss":
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src!./node_modules/resolve-url-loader??ref--6-4!./node_modules/sass-loader/lib/loader.js??ref--6-5!./resources/sass/bundle.scss ***!
@@ -516,13 +510,10 @@ function updateLink (link, options, obj) {
 /*!***********************************************!*\
   !*** ./node_modules/style-loader/lib/urls.js ***!
   \***********************************************/
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 
-<<<<<<< HEAD
-=======
 /**
  * When source maps are enabled, `style-loader` uses a link element with a data-uri to
  * embed the css on the page. This breaks all relative urls because now they are relative to a
@@ -612,7 +603,6 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
 
 /***/ }),
 
@@ -632,8 +622,6 @@ function hello() {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/frontend/dropdowns/custom-select.js":
 /*!**********************************************************!*\
   !*** ./resources/js/frontend/dropdowns/custom-select.js ***!
@@ -642,9 +630,9 @@ function hello() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
- // All select must have data-dropdown=toggle nad have child data-dropdown=target
+ // All select must have data-dropdown=toggle and have child data-dropdown=target
 
-function enableDropdowns() {
+function enableCustomSelects() {
   var customSelectMenus = $('[data-select=menu]');
   var shadow = $('#shadow'); // debugger;
 
@@ -656,9 +644,14 @@ function enableDropdowns() {
     var self = $(this);
     var target = $(e.target);
     var selectContainer = self.closest('[data-select=container]');
-    var selectTextField = selectContainer.find('[data-select=field]');
+    var selectTextField = selectContainer.find('[data-select=text-field]');
     var selectHiddenInput = selectContainer.find('input[hidden]');
     var selectMenu = selectContainer.find('[data-select=menu]');
+
+    if (!selectContainer && !selectTextField && !selectHiddenInput) {
+      throw Error('Html error, missing required data attributes');
+    }
+
     selectTextField.text(target.text());
     selectHiddenInput.val(target.text());
     selectMenu.slideUp(500);
@@ -666,7 +659,7 @@ function enableDropdowns() {
   }
 }
 
-enableDropdowns();
+$(document).ready(enableCustomSelects);
 
 /***/ }),
 
@@ -689,28 +682,100 @@ function enableDropdowns() {
 
   function showDropdown(e) {
     var shadow = $('#shadow');
-    var dropdown = $(this);
-    var dropdownContent = dropdown.find('[data-dropdown=target]');
+    var dropdownToggle = $(this);
+    var dropdownContainer = dropdownToggle.closest('[data-dropdown=container]');
+    var dropdownContent = dropdownContainer.find('[data-dropdown=menu]');
 
-    if (e.target.closest('[data-dropdown=target]')) {
+    if (!dropdownContent && !dropdownContainer) {
+      throw Error('Html error, missing required data attributes');
+    }
+
+    if (e.target.closest('[data-dropdown=menu]')) {
       return;
     }
 
+    dropdownContent.toggleClass('expanded');
+    dropdownContainer.toggleClass('active');
     shadow.toggleClass('active');
     dropdownContent.slideToggle(500);
-    shadow.click(function () {
+    shadow.one('click', function () {
       shadow.removeClass('active');
-      dropdownContent.removeClass('active');
+      dropdownContent.removeClass('expanded');
+      dropdownContainer.removeClass('active');
       dropdownContent.slideUp(500);
     });
   }
 }
 
-enableDropdowns();
+$(document).ready(enableDropdowns);
 
 /***/ }),
 
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
+/***/ "./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function rebuildList() {
+  var toListControl = $('[data-control=catalogToList]');
+  var toTileControl = $('[data-control=catalogToTile]');
+  var list = $('#searchResult');
+
+  if (toListControl && toTileControl && list) {
+    toListControl.click(switchToList);
+    toTileControl.click(switchToTile);
+  }
+
+  function switchToList() {
+    var control = $(this);
+
+    if (control.hasClass('is-active')) {
+      return;
+    }
+
+    list.addClass('is-list');
+    control.addClass('is-active');
+    toTileControl.removeClass('is-active');
+    rebuildCards();
+  }
+
+  function switchToTile() {
+    var control = $(this);
+
+    if (control.hasClass('is-active')) {
+      return;
+    }
+
+    list.removeClass('is-list');
+    control.addClass('is-active');
+    toListControl.removeClass('is-active');
+    rebuildCards();
+  }
+
+  function rebuildCards() {
+    var cards = list.children();
+    showPreloader();
+    cards.each(function (i, el) {
+      $(el).toggleClass('cell-4');
+      $(el).toggleClass('cell-12');
+    });
+  }
+
+  function showPreloader() {
+    var preloader = $('#catalogPreloader');
+    preloader.addClass('is-active');
+    setTimeout(function () {
+      return preloader.removeClass('is-active');
+    }, 300);
+  }
+}
+
+$(document).ready(rebuildList);
+
+/***/ }),
+
 /***/ "./resources/js/frontend/shit.js":
 /*!***************************************!*\
   !*** ./resources/js/frontend/shit.js ***!
@@ -722,21 +787,8 @@ $(function () {
   /*******************************  Main page ***************************************************/
 
   /*--- Slider on main page ---*/
-<<<<<<< HEAD
-  $('.main-slider__slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    dots: true,
-    autoplay: true
-  });
-  /*--- Open seo-text on main page ---*/
-
-=======
 
   /*--- Open seo-text on main page ---*/
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
   $('.seo-block__btn-read-more').click(function () {
     $('.seo-block__wrapper-seo-text').css('height', 'auto');
     $('.seo-block__btn-read-more').hide();
@@ -935,8 +987,6 @@ $(function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/frontend/show-seo/show-seo.js":
 /*!****************************************************!*\
   !*** ./resources/js/frontend/show-seo/show-seo.js ***!
@@ -967,7 +1017,7 @@ function enableSeoExpand() {
   }
 }
 
-enableSeoExpand();
+$(document).ready(enableSeoExpand);
 
 /***/ }),
 
@@ -993,7 +1043,6 @@ $('.main__slider').slick({
 
 /***/ }),
 
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
 /***/ "./resources/sass/bundle.scss":
 /*!************************************!*\
   !*** ./resources/sass/bundle.scss ***!
@@ -1001,9 +1050,6 @@ $('.main__slider').slick({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-// extracted by mini-css-extract-plugin
-=======
 
 var content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/src!../../node_modules/resolve-url-loader??ref--6-4!../../node_modules/sass-loader/lib/loader.js??ref--6-5!./bundle.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/resolve-url-loader/index.js?!./node_modules/sass-loader/lib/loader.js?!./resources/sass/bundle.scss");
 
@@ -1024,37 +1070,24 @@ var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyl
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
 
 /***/ }),
 
 /***/ 0:
-<<<<<<< HEAD
-/*!***********************************************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend/abc/abc.js ./resources/js/frontend/common.js ./resources/js/frontend/shit.js ./resources/sass/bundle.scss ***!
-  \***********************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./resources/js/frontend/abc/abc.js */"./resources/js/frontend/abc/abc.js");
-__webpack_require__(/*! ./resources/js/frontend/common.js */"./resources/js/frontend/common.js");
-__webpack_require__(/*! ./resources/js/frontend/shit.js */"./resources/js/frontend/shit.js");
-module.exports = __webpack_require__(/*! /var/www/agronet_web/resources/sass/bundle.scss */"./resources/sass/bundle.scss");
-=======
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./resources/js/frontend/common.js */"./resources/js/frontend/common.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/custom-select.js */"./resources/js/frontend/dropdowns/custom-select.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/dropdowns.js */"./resources/js/frontend/dropdowns/dropdowns.js");
+__webpack_require__(/*! ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js */"./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js");
 __webpack_require__(/*! ./resources/js/frontend/shit.js */"./resources/js/frontend/shit.js");
 __webpack_require__(/*! ./resources/js/frontend/show-seo/show-seo.js */"./resources/js/frontend/show-seo/show-seo.js");
 __webpack_require__(/*! ./resources/js/frontend/sliders/sliders.js */"./resources/js/frontend/sliders/sliders.js");
-module.exports = __webpack_require__(/*! D:\XAMP\htdocs\Agronet\resources\sass\bundle.scss */"./resources/sass/bundle.scss");
->>>>>>> f50189be63cf54e059e557c71bbe76e6562759dc
+module.exports = __webpack_require__(/*! /var/www/agronet_web/resources/sass/bundle.scss */"./resources/sass/bundle.scss");
 
 
 /***/ })
