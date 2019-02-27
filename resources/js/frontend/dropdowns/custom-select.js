@@ -1,7 +1,7 @@
 'use strict';
 
-// All select must have data-dropdown=toggle nad have child data-dropdown=target
-function enableDropdowns () {
+// All select must have data-dropdown=toggle and have child data-dropdown=target
+function enableCustomSelects () {
   const customSelectMenus = $('[data-select=menu]');
   const shadow = $('#shadow');
   // debugger;
@@ -14,9 +14,13 @@ function enableDropdowns () {
     const self = $(this);
     const target = $(e.target);
     const selectContainer = self.closest('[data-select=container]');
-    const selectTextField = selectContainer.find('[data-select=field]');
+    const selectTextField = selectContainer.find('[data-select=text-field]');
     const selectHiddenInput = selectContainer.find('input[hidden]');
     const selectMenu = selectContainer.find('[data-select=menu]');
+
+    if (!selectContainer && !selectTextField && !selectHiddenInput) {
+      throw Error('Html error, missing required data attributes');
+    }
 
     selectTextField.text(target.text());
     selectHiddenInput.val(target.text());
@@ -25,4 +29,4 @@ function enableDropdowns () {
   }
 }
 
-enableDropdowns();
+$(document).ready(enableCustomSelects);

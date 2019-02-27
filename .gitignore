@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+.idea/
+package-lock.json
 .env
 /.idea
 .idea/workspace.xml

@@ -15,9 +15,8 @@ function enableSeoExpand () {
 
     self.hide();
     seoContent.height(currentHeight);
-
     seoContent.stop().animate({height: expandedHeight}, 500);
   }
 }
 
-enableSeoExpand();
+$(document).ready(enableSeoExpand);

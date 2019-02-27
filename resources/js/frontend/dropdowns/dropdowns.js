@@ -1,32 +1,41 @@
 'use strict';
 
-function enableDropdowns () {
-  const dropdownElements = $('[data-dropdown=toggle]');
+function enableDropdowns() {
+    const dropdownElements = $('[data-dropdown=toggle]');
 
-  if (dropdownElements.length) {
-    dropdownElements.click(showDropdown)
-  }
-
-  function showDropdown (e) {
-    const shadow = $('#shadow');
-    const dropdown = $(this);
-    const dropdownContent = dropdown.find('[data-dropdown=target]');
-
-    if (e.target.closest('[data-dropdown=target]')) {
-      return;
+    if (dropdownElements.length) {
+        dropdownElements.click(showDropdown)
     }
 
-    shadow.toggleClass('active');
-    dropdownContent.slideToggle(500);
+    function showDropdown(e) {
+        const shadow = $('#shadow');
+        const dropdownToggle = $(this);
+        const dropdownContainer = dropdownToggle.closest('[data-dropdown=container]');
+        const dropdownContent = dropdownContainer.find('[data-dropdown=menu]');
 
-    shadow.click(
-        () => {
-          shadow.removeClass('active');
-          dropdownContent.removeClass('active');
-          dropdownContent.slideUp(500);
+
+        if (!dropdownContent && !dropdownContainer) {
+            throw Error('Html error, missing required data attributes');
         }
-    )
-  }
+
+        if (e.target.closest('[data-dropdown=menu]')) {
+            return;
+        }
+
+        dropdownContent.toggleClass('expanded');
+        dropdownContainer.toggleClass('active');
+        shadow.toggleClass('active');
+        dropdownContent.slideToggle(500);
+
+        shadow.one('click',
+            () => {
+                shadow.removeClass('active');
+                dropdownContent.removeClass('expanded');
+                dropdownContainer.removeClass('active');
+                dropdownContent.slideUp(500);
+            }
+        )
+    }
 }
 
-enableDropdowns();
+$(document).ready(enableDropdowns);

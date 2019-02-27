@@ -33,6 +33,10 @@
     position: relative;
     border-radius: 0;
 
+    .active > & {
+      background-color: lighten($button-green-bg, 8);
+    }
+
     &:hover {
       background-color: lighten($button-green-bg, 8);
     }

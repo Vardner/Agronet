@@ -630,9 +630,9 @@ function hello() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
- // All select must have data-dropdown=toggle nad have child data-dropdown=target
+ // All select must have data-dropdown=toggle and have child data-dropdown=target
 
-function enableDropdowns() {
+function enableCustomSelects() {
   var customSelectMenus = $('[data-select=menu]');
   var shadow = $('#shadow'); // debugger;
 
@@ -644,9 +644,14 @@ function enableDropdowns() {
     var self = $(this);
     var target = $(e.target);
     var selectContainer = self.closest('[data-select=container]');
-    var selectTextField = selectContainer.find('[data-select=field]');
+    var selectTextField = selectContainer.find('[data-select=text-field]');
     var selectHiddenInput = selectContainer.find('input[hidden]');
     var selectMenu = selectContainer.find('[data-select=menu]');
+
+    if (!selectContainer && !selectTextField && !selectHiddenInput) {
+      throw Error('Html error, missing required data attributes');
+    }
+
     selectTextField.text(target.text());
     selectHiddenInput.val(target.text());
     selectMenu.slideUp(500);
@@ -654,7 +659,7 @@ function enableDropdowns() {
   }
 }
 
-enableDropdowns();
+$(document).ready(enableCustomSelects);
 
 /***/ }),
 
@@ -677,24 +682,97 @@ function enableDropdowns() {
 
   function showDropdown(e) {
     var shadow = $('#shadow');
-    var dropdown = $(this);
-    var dropdownContent = dropdown.find('[data-dropdown=target]');
+    var dropdownToggle = $(this);
+    var dropdownContainer = dropdownToggle.closest('[data-dropdown=container]');
+    var dropdownContent = dropdownContainer.find('[data-dropdown=menu]');
 
-    if (e.target.closest('[data-dropdown=target]')) {
+    if (!dropdownContent && !dropdownContainer) {
+      throw Error('Html error, missing required data attributes');
+    }
+
+    if (e.target.closest('[data-dropdown=menu]')) {
       return;
     }
 
+    dropdownContent.toggleClass('expanded');
+    dropdownContainer.toggleClass('active');
     shadow.toggleClass('active');
     dropdownContent.slideToggle(500);
-    shadow.click(function () {
+    shadow.one('click', function () {
       shadow.removeClass('active');
-      dropdownContent.removeClass('active');
+      dropdownContent.removeClass('expanded');
+      dropdownContainer.removeClass('active');
       dropdownContent.slideUp(500);
     });
   }
 }
 
-enableDropdowns();
+$(document).ready(enableDropdowns);
+
+/***/ }),
+
+/***/ "./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function rebuildList() {
+  var toListControl = $('[data-control=catalogToList]');
+  var toTileControl = $('[data-control=catalogToTile]');
+  var list = $('#searchResult');
+
+  if (toListControl && toTileControl && list) {
+    toListControl.click(switchToList);
+    toTileControl.click(switchToTile);
+  }
+
+  function switchToList() {
+    var control = $(this);
+
+    if (control.hasClass('is-active')) {
+      return;
+    }
+
+    list.addClass('is-list');
+    control.addClass('is-active');
+    toTileControl.removeClass('is-active');
+    rebuildCards();
+  }
+
+  function switchToTile() {
+    var control = $(this);
+
+    if (control.hasClass('is-active')) {
+      return;
+    }
+
+    list.removeClass('is-list');
+    control.addClass('is-active');
+    toListControl.removeClass('is-active');
+    rebuildCards();
+  }
+
+  function rebuildCards() {
+    var cards = list.children();
+    showPreloader();
+    cards.each(function (i, el) {
+      $(el).toggleClass('cell-4');
+      $(el).toggleClass('cell-12');
+    });
+  }
+
+  function showPreloader() {
+    var preloader = $('#catalogPreloader');
+    preloader.addClass('is-active');
+    setTimeout(function () {
+      return preloader.removeClass('is-active');
+    }, 300);
+  }
+}
+
+$(document).ready(rebuildList);
 
 /***/ }),
 
@@ -939,7 +1017,7 @@ function enableSeoExpand() {
   }
 }
 
-enableSeoExpand();
+$(document).ready(enableSeoExpand);
 
 /***/ }),
 
@@ -996,15 +1074,16 @@ if(false) {}
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./resources/js/frontend/common.js */"./resources/js/frontend/common.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/custom-select.js */"./resources/js/frontend/dropdowns/custom-select.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/dropdowns.js */"./resources/js/frontend/dropdowns/dropdowns.js");
+__webpack_require__(/*! ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js */"./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js");
 __webpack_require__(/*! ./resources/js/frontend/shit.js */"./resources/js/frontend/shit.js");
 __webpack_require__(/*! ./resources/js/frontend/show-seo/show-seo.js */"./resources/js/frontend/show-seo/show-seo.js");
 __webpack_require__(/*! ./resources/js/frontend/sliders/sliders.js */"./resources/js/frontend/sliders/sliders.js");
