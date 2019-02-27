@@ -33,7 +33,7 @@
     position: relative;
     border-radius: 0;
 
-    .active > & {
+    .is-active > & {
       background-color: lighten($button-green-bg, 8);
     }
 
@@ -47,6 +47,21 @@
 
     &:hover {
       background-color: lighten($button-orange, 8);
+    }
+  }
+
+  &--submit-prices {
+    max-width: 40px;
+    background: #03996C;
+    border-radius: 1px;
+    text-align: center;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+
+    &:hover {
+      background: lighten(#03996C, 10);
     }
   }
 

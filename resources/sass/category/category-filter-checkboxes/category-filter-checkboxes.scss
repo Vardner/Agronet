@@ -1,0 +1,25 @@
+.category-filter-checkboxes {
+  font-family: Roboto;
+  font-size: 14px;
+
+
+  &__item {
+    padding: 5px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    &:hover {
+      background: darken(#fff, 7);
+    }
+  }
+
+  &__link{
+    padding-left: 3px;
+  }
+
+  &__count {
+    color: #999999;
+    cursor: default;
+  }
+}

@@ -1,0 +1,25 @@
+.category-filter-price {
+
+  &__input {
+    border: 1px solid #C4C4C4;
+    padding: 10px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 1px;
+    @include placeholderColor(#999999);
+    width: 72px;
+
+    &:focus {
+      border-color: #09c586;
+    }
+  }
+
+  &__dash{
+    display: inline-flex;
+    height: 100%;
+    margin-right: 8px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+}

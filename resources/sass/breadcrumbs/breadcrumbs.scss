@@ -1,0 +1,38 @@
+.breadcrumbs {
+  font-family: Roboto;
+  font-size: 14px;
+  @include clearfix();
+
+  &__item {
+    float: left;
+    padding-left: 20px;
+    padding-right: 10px;
+    position: relative;
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        content: initial;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 7px;
+      height: 12px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      background-image: url('../images/breadcrumbs/BreadcrumbsArrow.svg');
+    }
+  }
+
+  &__link {
+    color: #999;
+
+    &:hover {
+      color: #326BB5;
+    }
+  }
+}

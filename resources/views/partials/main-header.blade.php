@@ -63,7 +63,7 @@
                                 <path d="M7.99433 12.9951H5.15205C4.99587 12.9951 4.90384 13.0593 4.85407 13.1157C4.78132 13.1982 4.74992 13.3107 4.76571 13.4354C4.87863 14.3278 5.64299 15 6.54377 15C7.45446 15 8.21987 14.3183 8.32411 13.4147C8.33095 13.3555 8.33614 13.2088 8.23727 13.0979C8.17651 13.0297 8.09024 12.9951 7.99433 12.9951Z" fill="#F6B639" />
                             </svg>
                             <!-- Виден если уведомления есть -->
-                            <span class="header__icon-counter active">5</span>
+                            <span class="header__icon-counter is-active">5</span>
                         </div>
                         <div class="header__items-wrapper">
                             <div class="header__icon">
@@ -94,7 +94,7 @@
                     <div class="header__category" data-dropdown="container">
                         <button class="button button--category" data-dropdown="toggle">
                             Каталог товаров
-                            <svg class="button__icon" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="button__icon header__category-arrow" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.75742 8.46754L0.307864 2.01777C-0.102617 1.60749 -0.102617 0.942281 0.307864 0.532197C0.717981 0.122079 1.38315 0.122079 1.79323 0.532197L7.50011 6.23925L13.2068 0.532363C13.6171 0.122246 14.2822 0.122246 14.6923 0.532363C15.1026 0.942481 15.1026 1.60765 14.6923 2.01794L8.24263 8.46771C8.03747 8.67277 7.76887 8.77518 7.50014 8.77518C7.23128 8.77518 6.96248 8.67257 6.75742 8.46754Z" fill="white" />
                             </svg>
                         </button>
@@ -280,9 +280,12 @@
                         <input name="finding-goods" type="text" class="header__search-input" placeholder="Поиск по объявлениям">
                         <div class="header__search-select" data-dropdown="container" data-select="container">
                             <input type="text" hidden name="finding-area">
-                            <span class="header__search-input" data-dropdown="toggle" data-select="text-field">Вся
+                            <div class="header__search-input" data-dropdown="toggle" data-select="text-field">Вся
                                 Украина
-                            </span>
+                                <svg class="header__search-arrow" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.75742 8.24294L0.307861 1.79316C-0.102621 1.38288 -0.102621 0.717672 0.307861 0.307588C0.717978 -0.10253 1.38315 -0.10253 1.79323 0.307588L7.50011 6.01464L13.2068 0.307754C13.6171 -0.102364 14.2822 -0.102364 14.6923 0.307754C15.1026 0.717872 15.1026 1.38304 14.6923 1.79333L8.24263 8.2431C8.03747 8.44816 7.76887 8.55057 7.50014 8.55057C7.23128 8.55057 6.96248 8.44796 6.75742 8.24294Z" fill="#C4C4C4"/>
+                                </svg>
+                            </div>
                             <ul class="header__search-dropdown" data-dropdown="menu" data-select="menu">
                                 <li class="header__search-dropdown-item">
                                     Ивано-Франковская область

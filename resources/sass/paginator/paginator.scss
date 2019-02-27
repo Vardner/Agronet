@@ -43,6 +43,10 @@
     display: block;
     color: #000;
 
+    &:hover {
+      color: #00997D;
+    }
+
     &--active {
       color: #03996C;
       font-weight: bold;

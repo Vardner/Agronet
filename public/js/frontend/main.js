@@ -606,6 +606,34 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./resources/js/frontend/categoryFilterDropdown/categoryFilterDropdown.js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/frontend/categoryFilterDropdown/categoryFilterDropdown.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function enableFilterDropdowns() {
+  var filterDropdowns = $('[data-dropdown-filter=toggle]');
+
+  if (filterDropdowns.length) {
+    filterDropdowns.click(toggleDropdown);
+  }
+
+  function toggleDropdown() {
+    var toggle = $(this);
+    var container = toggle.closest('[data-dropdown-filter=container]');
+    var dropdown = container.find('[data-dropdown-filter=inner]');
+    toggle.toggleClass('is-active');
+    dropdown.toggleClass('is-collapsed');
+    dropdown.slideToggle('400');
+  }
+}
+
+$(document).ready(enableFilterDropdowns);
+
+/***/ }),
+
 /***/ "./resources/js/frontend/common.js":
 /*!*****************************************!*\
   !*** ./resources/js/frontend/common.js ***!
@@ -613,12 +641,7 @@ module.exports = function (css) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function hello() {
-  console.log('hello');
-  var abcccccc = 12;
-  var ttttttt = 15;
-  return abcccccc + ttttttt;
-}
+
 
 /***/ }),
 
@@ -681,6 +704,11 @@ function enableDropdowns() {
   }
 
   function showDropdown(e) {
+    if (e.target.closest('[data-dropdown=menu]')) {
+      return;
+    }
+
+    var windowWidth = window.innerWidth;
     var shadow = $('#shadow');
     var dropdownToggle = $(this);
     var dropdownContainer = dropdownToggle.closest('[data-dropdown=container]');
@@ -690,20 +718,20 @@ function enableDropdowns() {
       throw Error('Html error, missing required data attributes');
     }
 
-    if (e.target.closest('[data-dropdown=menu]')) {
-      return;
+    if (windowWidth > 1023) {
+      dropdownContent.toggleClass('is-expanded');
+      dropdownContainer.toggleClass('is-active');
+      shadow.toggleClass('is-active');
+      dropdownContent.slideToggle(500);
+      shadow.one('click', function () {
+        shadow.removeClass('is-active');
+        dropdownContent.removeClass('is-expanded');
+        dropdownContainer.removeClass('is-active');
+        dropdownContent.slideUp(500);
+      });
     }
 
-    dropdownContent.toggleClass('expanded');
-    dropdownContainer.toggleClass('active');
-    shadow.toggleClass('active');
-    dropdownContent.slideToggle(500);
-    shadow.one('click', function () {
-      shadow.removeClass('active');
-      dropdownContent.removeClass('expanded');
-      dropdownContainer.removeClass('active');
-      dropdownContent.slideUp(500);
-    });
+    if (windowWidth < 1023 && windowWidth > 768) {}
   }
 }
 
@@ -1037,6 +1065,7 @@ $('.main__slider').slick({
   arrows: false,
   dots: true,
   autoplay: true,
+  autoplaySpeed: 4000,
   infinite: true,
   dotsClass: 'main__slider-dots'
 });
@@ -1074,12 +1103,13 @@ if(false) {}
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/frontend/categoryFilterDropdown/categoryFilterDropdown.js ./resources/js/frontend/common.js ./resources/js/frontend/dropdowns/custom-select.js ./resources/js/frontend/dropdowns/dropdowns.js ./resources/js/frontend/rebuildSearchResult/rebuildSearchResult.js ./resources/js/frontend/shit.js ./resources/js/frontend/show-seo/show-seo.js ./resources/js/frontend/sliders/sliders.js ./resources/sass/bundle.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! ./resources/js/frontend/categoryFilterDropdown/categoryFilterDropdown.js */"./resources/js/frontend/categoryFilterDropdown/categoryFilterDropdown.js");
 __webpack_require__(/*! ./resources/js/frontend/common.js */"./resources/js/frontend/common.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/custom-select.js */"./resources/js/frontend/dropdowns/custom-select.js");
 __webpack_require__(/*! ./resources/js/frontend/dropdowns/dropdowns.js */"./resources/js/frontend/dropdowns/dropdowns.js");

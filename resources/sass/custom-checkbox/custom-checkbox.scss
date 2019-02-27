@@ -1,0 +1,32 @@
+.custom-checkbox {
+  display: none;
+
+  &:checked ~ label:before {
+
+    border-color: #03996C;
+    background: center no-repeat url('../images/icons/CustomCheckboxArrow.svg') #03996C;
+  }
+
+  & ~ label {
+    cursor: pointer;
+    padding-left: 26px;
+    font-size: 14px;
+    font-family: Roboto;
+    color: #232323;
+    padding-right: 10px;
+    position: relative;
+
+    &:before {
+      content: '';
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 1px solid #C4C4C4;
+      border-radius: 1px;
+      background-color: #fff;
+    }
+  }
+}

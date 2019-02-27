@@ -10,13 +10,17 @@
 @import "catalog-list/catalog-list";
 @import "_dashboard";
 @import "product-page/product-card";
-@import "category-page/filter-page";
-@import "additionals/paginator";
+@import "category/category-menu/category-menu";
+@import "category/category-filter/category-filter";
+@import "category/category-filter-checkboxes/category-filter-checkboxes";
+@import "category/category-filter-price/category-filter-price";
 @import "header/header";
 @import "footer/footer";
 @import "button/button";
-@import "category-menu/category-menu";
 @import "filter-bar/filter-bar";
+@import "breadcrumbs/breadcrumbs";
+@import "paginator/paginator";
+@import "custom-checkbox/custom-checkbox";
 
 
 /**************************************************/

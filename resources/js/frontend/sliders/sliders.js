@@ -6,6 +6,7 @@ $('.main__slider').slick({
   arrows: false,
   dots: true,
   autoplay: true,
+  autoplaySpeed: 4000,
   infinite: true,
   dotsClass: 'main__slider-dots'
 });

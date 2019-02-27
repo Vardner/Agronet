@@ -1,0 +1,67 @@
+.category-filter {
+  padding: 20px;
+  padding-right: 7px;
+  width: 270px;
+  max-height: 950px;
+  height: 100%;
+  overflow-y: scroll;
+  font-family: Roboto;
+  font-size: 14px;
+  color: #232323;
+  background: #fff;
+
+  &__title {
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      color: #51ac07;
+
+      & svg path{
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__section {
+    padding-bottom: 15px;
+    position: relative;
+
+    &-arrow {
+      transition: transform 0.3s linear;
+      position: absolute;
+      right: 0;
+    }
+
+    .category-filter__title.is-active &-arrow{
+      transform: rotate(180deg);
+    }
+
+    &-inner {
+      overflow-y: auto;
+      max-height: 999px;
+      padding-top: 15px;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 13px;
+    height: 18px;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
