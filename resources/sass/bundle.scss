@@ -1,4 +1,5 @@
-//@import "compass/css3";
+/** BASE STYLES **/
+
 @import "base/_variables";
 @import "base/zindex";
 @import "base/_reset";
@@ -6,23 +7,56 @@
 @import "base/_utilities";
 @import "base/_fonts";
 @import "base/_myGrid";
-@import "main/main";
+
+/**************************************************/
+
+
+/** Partials **/
+
+@import "button/button";
+@import "breadcrumbs/breadcrumbs";
 @import "catalog-list/catalog-list";
-@import "_dashboard";
-@import "product-page/product-card";
+@import "custom-checkbox/custom-checkbox";
+@import "paginator/paginator";
+@import "page-loader/page-loader";
+@import "price/price";
+@import "favorite/favorite";
+@import "slider-dots/slider-dots";
+@import "tab-list/tab-list";
+
+/**************************************************/
+
+
+/** Main Parts **/
+
+@import "header/header";
+@import "main/main";
+@import "footer/footer";
+
+/**************************************************/
+
+
+/** Category Page Parts **/
+
 @import "category/category-menu/category-menu";
 @import "category/category-filter/category-filter";
 @import "category/category-filter-checkboxes/category-filter-checkboxes";
 @import "category/category-filter-price/category-filter-price";
-@import "header/header";
-@import "footer/footer";
-@import "button/button";
 @import "filter-bar/filter-bar";
-@import "breadcrumbs/breadcrumbs";
-@import "paginator/paginator";
-@import "custom-checkbox/custom-checkbox";
-
 
 /**************************************************/
+
+
+/** Product Page Parts **/
+
+@import "product/product";
+@import "product/product-slider/product-slider";
+@import "product/product-details/product-details";
+@import "product/product-info/product-info";
+
+/**************************************************/
+
+
+
 
 

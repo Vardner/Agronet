@@ -1,0 +1,36 @@
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    li {
+      cursor: pointer ;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      margin-right: 15px;
+
+      background: $slick-dots_background;
+      box-shadow: $slick-dots_shadow;
+
+      button {
+        cursor: pointer;
+        background: transparent;
+        color: transparent;
+
+        &:before {
+          color: $slick-dots_background;
+        }
+      }
+
+      &.slick-active {
+        background: $slick-dots-active_background;
+
+        button:before {
+          color: $slick-dots-active_background;
+        }
+      }
+    }
+}

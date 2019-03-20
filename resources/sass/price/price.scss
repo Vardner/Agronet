@@ -1,0 +1,10 @@
+.price {
+  font-family: Roboto;
+  font-size: 14px;
+
+  &__val {
+    font-weight: bold;
+    font-size: 20px;
+    color: $price-default-color;
+  }
+}

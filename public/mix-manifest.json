@@ -1,4 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+  "/css/main.css": "/css/main.d121eaaa47e1609cccb6.css",
+  "/js/main.js": "/js/main-d121eaaa.js",
+  "/js/pollyfill.js": "/js/pollyfill-d121eaaa.js",
+  "/js/vendors~main.js": "/js/vendors~main-d121eaaa.js",
+  "/js/vendors~pollyfill.js": "/js/vendors~pollyfill-d121eaaa.js"
 }

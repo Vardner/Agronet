@@ -1,0 +1,88 @@
+.product-slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__carousel{
+    max-width: 340px;
+    max-height: 340px;
+    overflow: hidden;
+
+    &-item {
+      overflow: hidden;
+    }
+
+    &-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__thumbs {
+    width: 75px;
+
+    &-item {
+      margin-bottom: 10px;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      opacity: 0.5;
+      border: 1px solid transparent;
+      transition: .3s;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &.slick-current, &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: auto;
+    }
+
+    &-next {
+      display: block;
+      width: 100%;
+      background: transparent;
+      padding: 5px;
+      color: #C4C4C4;
+
+      &:hover, &:active {
+        color: #5a9aea;
+      }
+
+      @media screen and (max-width: 1023px) {
+        width: auto;
+        position: absolute;
+        top: calc(50% - 11px);
+        right: 0;
+      }
+    }
+
+    &-arrow {
+      fill: currentColor;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+      padding-top: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 767px) {
+    align-items: center;
+  }
+}

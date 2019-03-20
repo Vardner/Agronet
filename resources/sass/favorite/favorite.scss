@@ -1,0 +1,20 @@
+.favorite {
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+
+  &:hover, &:active {
+    color: #F6B639;
+
+    & .favorite__icon {
+      transform: scale(1.1);
+      fill: currentColor;
+    }
+  }
+
+  &__icon {
+    vertical-align: bottom;
+    fill: #CDCDCD;
+    transition: .3s cubic-bezier(.46,-0.11,.31,1.07);
+  }
+}

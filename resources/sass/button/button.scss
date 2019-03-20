@@ -40,6 +40,31 @@
     &:hover {
       background-color: lighten($button-green-bg, 8);
     }
+
+    @media screen and (max-width: 1023px){
+      display: none;
+    }
+  }
+
+  &--category-tab {
+    height: 100%;
+    background: $button-green-bg;
+    position: relative;
+    border-radius: 0;
+    display: none;
+    padding: 0;
+
+    .is-active > & {
+      background-color: lighten($button-green-bg, 8);
+    }
+
+    &:hover {
+      background-color: lighten($button-green-bg, 8);
+    }
+
+    @media screen and (max-width: 1023px){
+      display: block;
+    }
   }
 
   &--more {

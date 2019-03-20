@@ -35,10 +35,10 @@ function enableDropdowns() {
                 dropdownContent.slideUp(500);
               }
           )
-        }
-
-        if (windowWidth < 1023 && windowWidth > 768) {
-
+        } else {
+          dropdownContent.toggleClass('is-expanded');
+          dropdownContainer.toggleClass('is-active');
+          shadow.toggleClass('is-active is-dark');
         }
     }
 }
